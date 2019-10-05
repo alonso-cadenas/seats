@@ -1,0 +1,2 @@
+# seats
+Find your seat :)
