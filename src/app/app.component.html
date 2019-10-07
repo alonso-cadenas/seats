@@ -313,7 +313,7 @@
     </div>
   </div>
 
-  <h2 *ngIf="tableId">You will be sitting at table {{tableId}}</h2>
+  <h2 *ngIf="foundTable">You will be sitting at table {{foundTable?.id}}</h2>
 </div>
 
 <router-outlet></router-outlet>
