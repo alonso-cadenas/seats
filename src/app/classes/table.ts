@@ -8,6 +8,6 @@ export class Table {
   }
 
   findByName(b: string): boolean {
-    return !!this.names.find(a => a.localeCompare(b, 'en', {sensitivity: 'base'}));
+    return !!this.names.find(a => a.toUpperCase() === b.toUpperCase());
   }
 }
