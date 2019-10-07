@@ -11,16 +11,12 @@ export class AppComponent {
   tables: Table[] = [
     new Table(1, ['John Doe', 'Jane Doe']),
     new Table(2, ['Juan Gomez', 'Maria Gomez']),
-    new Table(3, ['Julio Gomez', 'Aaron Messi']),
+    new Table(3, ['Luis Diaz', 'Aaron Messi']),
     new Table(4, ['Lionel Pena', 'Cristiano Giggs']),
   ];
 
   find(name) {
-    for (const table of this.tables) {
-      if (table.findByName(name)) {
-        this.tableId = table.id;
-        break;
-      }
-    }
+    const found: Table = this.tables.find(table => table.findByName(name));
+    this.tableId = found ? found.id : undefined;
   }
 }
