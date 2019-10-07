@@ -17,7 +17,7 @@ export class AppComponent {
 
   find(name) {
     for (const table of this.tables) {
-      if (table.includesName(name)) {
+      if (table.findByName(name)) {
         this.tableId = table.id;
         break;
       }

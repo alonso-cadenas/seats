@@ -7,7 +7,7 @@ export class Table {
     this.names = names;
   }
 
-  includesName(name): boolean {
-    return this.names.includes(name);
+  findByName(b: string): boolean {
+    return !!this.names.find(a => a.localeCompare(b, 'en', {sensitivity: 'base'}));
   }
 }
