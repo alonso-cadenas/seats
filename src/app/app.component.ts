@@ -7,6 +7,7 @@ import {Table} from './classes/table';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
+  searched: boolean = false;
   foundTable: Table;
   tables: Table[] = [
     new Table(1, ['John Doe', 'Jane Doe']),
@@ -17,5 +18,6 @@ export class AppComponent {
 
   find(name) {
     this.foundTable = this.tables.find(table => table.findByName(name));
+    this.searched = true;
   }
 }

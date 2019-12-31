@@ -313,7 +313,12 @@
     </div>
   </div>
 
-  <h2 *ngIf="foundTable">You will be sitting at table {{foundTable?.id}}</h2>
+  <div *ngIf="searched">
+    <h2 *ngIf="foundTable; else notFound">You will be sitting at table {{foundTable?.id}}</h2>
+    <ng-template #notFound>
+      <h2>Unable to find your seat :(</h2>
+    </ng-template>
+  </div>
 </div>
 
 <router-outlet></router-outlet>
